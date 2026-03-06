@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { background-color: #f4f7f6; font-family: sans-serif; }
+        
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .filter-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filter-section input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        @media screen and (max-width: 600px) {
+            /* Responsive cho Mobile */
+            table, thead, tbody, th, td, tr { display: block; }
+            thead { display: none; } /* Ẩn tiêu đề bảng trên mobile */
+            tr { margin-bottom: 15px; border: 1px solid #ddd; }
+            td { 
+                border: none; 
+                position: relative; 
+                padding-left: 50%; 
+                text-align: right; 
+                border-bottom: 1px solid #eee;
+            }
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Management System</h2>
+        
+        <div class="filter-section">
+            <input type="text" id="searchName" placeholder="Search by name...">
+            <input type="text" id="searchCompany" placeholder="Filter by company...">
+        </div>
+    
+        <div class="table-responsive">
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Company</th>
+                    </tr>
+                </thead>
+                <tbody id="userBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="phan3.js"></script>
+</body>
+</html>
